@@ -20,16 +20,16 @@ def data_intial():
         list[BaseModel]: Country_information
     """
     db: list[country]=[]
-    if os.path.exists("countries.json"):
-        with open("countries.json",'r',encoding="utf-8")as f:
+    if os.path.exists("DataFile/countries.json"):
+        with open("DataFile/countries.json",'r',encoding="utf-8")as f:
             data=json.load(f)
         db=[country(**item) for item in data]
-    elif not(os.path.exists("table_country_name_v1.csv") and os.path.exists("more_information_each_country.csv")):
+    elif not(os.path.exists("DataFile/table_country_name_v1.csv") and os.path.exists("DataFile/more_information_each_country.csv")):
         data_Scrape()
         print("data scraping")
     else:
-        df_main_table=pd.read_csv("table_country_name_v1.csv")
-        df_more_information=pd.read_csv("more_information_each_country.csv")
+        df_main_table=pd.read_csv("DataFile/table_country_name_v1.csv")
+        df_more_information=pd.read_csv("DataFile/more_information_each_country.csv")
 
 
         list_coulnms_df_more_information=df_more_information.columns
@@ -64,7 +64,7 @@ def data_intial():
             db.append(obj_country)    
 
     # sve db file:
-    with open("countries.json",'w',encoding="utf-8")as f:
+    with open("DataFile/countries.json",'w',encoding="utf-8")as f:
         json.dump([coun.model_dump() for coun in db] ,f,ensure_ascii=False,indent=2)
         
     

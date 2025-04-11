@@ -20,9 +20,9 @@ class scrape_class():
                 df1= pd.DataFrame.from_dict(country_main_page)
                 df=df1
                 print(df)
-                df.to_csv("table_country_name_v1.csv",index=False)
-                df.to_xml("table_country_name_v1.xml",index=False)  
-                df.to_json("table_country_name_v1.json",index=False)  #fastapi
+                df.to_csv("DataFile/table_country_name_v1.csv",index=False)
+                df.to_xml("DataFile/table_country_name_v1.xml",index=False)  
+                df.to_json("DataFile/table_country_name_v1.json",index=False)  #fastapi
                 print("Save File csv, json and XML for table of country name")
             except:
                 print("Error in the scraping main table !!")
@@ -44,9 +44,9 @@ class scrape_class():
                 print("More informaion :")     
                 print(df_more_information.info())
                 # print(df_more_information)
-                df_more_information.to_csv("more_information_each_country.csv")
-                df_more_information.to_xml("more_information_each_country.xml",index=False)  #database
-                df_more_information.to_json("more_information_each_country.json",index=False)  # FastAPI
+                df_more_information.to_csv("DataFile/more_information_each_country.csv")
+                df_more_information.to_xml("DataFile/more_information_each_country.xml",index=False)  #database
+                df_more_information.to_json("DataFile/more_information_each_country.json",index=False)  # FastAPI
                 print("Save File csv,json and XML for table of more information about each country")    
         
     def country_scraping_main_page_data(self,results):
