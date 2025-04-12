@@ -1,6 +1,6 @@
 1- Setup your envirment: run this in cmd  
-    python -m venv fastApi_project
-    source fastApi_project/bin/activate
+    python -m venv fastApi_project  /n
+    source fastApi_project/bin/activate  \n
     pip install -r requirement.txt 
 
 2-run the app: run in cmd:
