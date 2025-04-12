@@ -80,7 +80,7 @@ db: list[country]=data_intial()
 
 @app.get("/")
 def root():
-    return {"message": "Hello World"}
+    return db
 
 @app.get("/country")
 async def fetch_country():
