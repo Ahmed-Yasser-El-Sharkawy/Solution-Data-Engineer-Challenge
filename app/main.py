@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from country_models import country,more_information,Value_Year
+from app.country_models import country,more_information,Value_Year
 import pandas as pd
-from Scrape import scrape_class
+from app.Scrape import scrape_class
 import json
 import os
 
