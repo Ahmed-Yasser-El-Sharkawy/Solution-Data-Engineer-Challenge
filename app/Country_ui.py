@@ -195,4 +195,3 @@ def Countries_render_ui_ver3(db):
 
 
 Countries_render_ui_ver3(db)
-        

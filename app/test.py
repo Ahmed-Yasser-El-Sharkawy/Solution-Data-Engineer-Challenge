@@ -1,2 +1,4 @@
 import os
-print(not(os.path.exists("DataFile/table_country_name_v1.csv") and os.path.exists("DataFile/more_information_each_country.csv")))
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+print(os.path.exists("New_DataFile\countries.json"))
