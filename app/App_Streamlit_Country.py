@@ -6,7 +6,6 @@ from country_models import country
 from pydantic import BaseModel
 
 
-
 def load_data():
     with open(".\DataFile\countries.json",'r') as f:
         row_data=json.load(f)
@@ -60,3 +59,4 @@ for item in selected_country.important_information:
 
         st.line_chart(df)
         st.caption(item.Element)
+        

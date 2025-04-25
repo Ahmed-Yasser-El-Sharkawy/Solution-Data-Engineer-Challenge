@@ -12,7 +12,6 @@ def data_Scrape():
     scrape_class()
 
 
-
 def data_intial():
     """
         this Take the file csv and tranfer into the pydantic schema
@@ -71,8 +70,6 @@ def data_intial():
     
     # print(db)
     return db
-
-
 
 app = FastAPI()
 
