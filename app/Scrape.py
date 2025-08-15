@@ -4,12 +4,14 @@ import pandas as pd
 from io import StringIO
 import time
 import os
+import time
 
 class scrape_class():
     
     def __init__(self, web_site="https://data.worldbank.org/country"):
         
         results=requests.get(web_site)
+        time.sleep(10)
 
         # print(type(results))
         # print(results.status_code)
@@ -32,11 +34,11 @@ class scrape_class():
         
             if len(df["Link_of_country"])>0:
                 for i in range(len(df['Link_of_country'])):        #try the 5th of country for testing only .    len(df['Link of country'])
-                    time.sleep(5)
                     print(f"country index: {i}")
                     try:
                         results=requests.get(df['Link_of_country'][i])
                         if(results.status_code==200 or results.status_code==202):
+                            time.sleep(300)
                             mini_data_frame=self.Scraping_each_country(results,df['Names_country'][i])
                             df_more_information=pd.concat([df_more_information, mini_data_frame],ignore_index=True)
                     except:
@@ -145,4 +147,4 @@ class scrape_class():
             return pd.DataFrame()
     
 
-# scrape_class()
+scrape_class()

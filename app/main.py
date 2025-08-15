@@ -71,14 +71,18 @@ def data_intial():
     # print(db)
     return db
 
-app = FastAPI()
+# app = FastAPI()
 
-db: list[country]=data_intial()
+# db: list[country]=data_intial()
 
-@app.get("/")
-def root():
-    return db
+# @app.get("/")
+# def root():
+#     return db
 
-@app.get("/country")
-async def fetch_country():
-    return db
+# @app.get("/country")
+# async def fetch_country():
+#     return db
+
+
+
+scrape_class()

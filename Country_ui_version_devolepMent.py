@@ -5,6 +5,8 @@ import os
 import json
 import  plotly.graph_objects as go
 from pydantic import BaseModel
+from typing import List
+
 
 class Value_Year(BaseModel):
     year: str
@@ -278287,7 +278289,7 @@ db=[
 ]
 
 def Countries_render_ui_ver3(db):
-    countries = [country(**item)for item in db]
+    countries : List[country]= [country(**item)for item in db]
 
     st.set_page_config(
     page_title="📊 Interactive Country Dashboard",
