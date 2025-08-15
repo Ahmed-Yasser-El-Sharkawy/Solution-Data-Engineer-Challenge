@@ -16,6 +16,8 @@ pip install -r requirements.txt
 '''bash
 fastapi dev app/main.py
 
+## RUN script :
+streamlit run app/Country_ui.py
 
 ## 3- go to the link (Access Api)
 http://127.0.0.1:8000
